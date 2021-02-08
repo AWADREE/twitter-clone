@@ -1,0 +1,32 @@
+/* to hide scrollbar chrome safari and opera */
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
+/* to hide scrollbar Edge IE and Firefox */
+.feed {
+  -ms-overflow-style: none; /*Edge adn IE */
+  scrollbar-width: none; /*firefox */
+}
+
+.feed {
+  flex: 0.47;
+  border-right: 1px solid var(--twitter-background);
+  min-width: 40%;
+  overflow-y: scroll;
+}
+.feed__header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  border: 1px solid var(--twitter-background);
+  border-right: none;
+  border-left: none;
+  padding: 15px 20px;
+}
+
+.feed__header > h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
