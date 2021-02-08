@@ -3,7 +3,6 @@ body {
   --twitter-color: #50b7f5;
   --twitter-background: #e6ecf0;
 }
-
 /* margion auto  to add as much margion as needed*/
 .app {
   display: flex;
