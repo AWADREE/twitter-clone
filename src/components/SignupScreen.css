@@ -1,0 +1,65 @@
+.signup__DarkenedBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.signup__Background {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  border-radius: 10px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  z-index: 10;
+}
+
+.signup__Icon {
+  margin: 10px;
+  font-size: 35px;
+  color: var(--twitter-color);
+  margin-left: 49%;
+}
+
+.signup__h3 {
+  font-size: 25px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.signup__InputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.signup__Input {
+  border: 2px solid var(--twitter-background);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 50px;
+  font-size: 25px;
+  outline-color: var(--twitter-color);
+  padding-left: 10px;
+}
+
+.signup__Button {
+  background-color: var(--twitter-color) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  width: 400px;
+  height: 50px !important;
+  margin-top: 30px !important;
+  margin-left: 180px !important;
+}
