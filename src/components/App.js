@@ -19,15 +19,9 @@ function App() {
       <Switch>
         <Route exact path="/" component={LoginPage} />
         <Route exact path="/home" component={HomePage} />
-        <Route exact path="/404" component={ErrorPage} />
+        <Route exact path="/404" render={(props) => <ErrorPage />} />
         <Redirect to="/404" />
       </Switch>
-      {/* //BEM
-      <div className="app">
-        <Sidebar />
-        <Feed />
-        <Widgets />
-      </div> */}
     </Router>
   );
 }
