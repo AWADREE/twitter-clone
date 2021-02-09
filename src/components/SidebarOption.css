@@ -1,9 +1,14 @@
 .sidebarOption {
+  color: black;
   display: flex;
   align-items: center;
   cursor: pointer;
   border-radius: 30px;
   transition: background-color 200ms ease-out;
+}
+
+.sidebarOption__Link {
+  text-decoration: none;
 }
 
 /* using a varibale */

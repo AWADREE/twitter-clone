@@ -1,0 +1,54 @@
+.loginPage {
+  display: flex;
+}
+
+.loginPage > img {
+  max-width: 54vw;
+  min-width: 500px;
+  min-height: 600px;
+  height: 95vh;
+  width: auto;
+}
+
+.loginPage__LargeTwitterIcon {
+  color: white;
+  font-size: 25vw !important;
+  position: absolute;
+  top: 20vh;
+  left: 15vw;
+}
+
+.loginPage__Interactive {
+  margin-left: 25px;
+}
+
+.loginPage__SmallTwitterIcon {
+  font-size: 49px !important;
+  margin-top: 60px;
+  margin-left: 5px;
+  color: var(--twitter-color);
+  margin-bottom: 35px;
+}
+
+.loginPage__WelcomeMessageBox > h1 {
+  font-size: 75px;
+}
+
+.loginPage__WelcomeMessageBox > h3 {
+  font-size: 35px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.loginPage__SignupButton {
+  background-color: var(--twitter-color) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  width: 400px;
+  height: 50px !important;
+  margin-top: 20px !important;
+  margin-left: auto !important;
+}
