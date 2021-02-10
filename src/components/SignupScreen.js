@@ -1,81 +1,24 @@
-import React, { useRef, useEffect, useCallback, useState } from "react";
+import React, { useRef } from "react";
 import { useSpring, animated } from "react-spring";
 import "./SignupScreen.css";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import { Button } from "@material-ui/core";
-import { auth } from "./firebase";
 
-const SignupScreen = ({ showSignup, setshowSignup }) => {
+const SignupScreen = ({
+  showSignup,
+  setshowSignup,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  hasAccount,
+  setHasAccount,
+  username,
+  setUsername,
+  displayName,
+  setDisplayName,
+}) => {
   const screenRef = useRef();
-
-  const [user, setUser] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [hasAccount, setHassAccount] = useState(false);
-
-  const clearInputs = () => {
-    setEmail("");
-    setPassword("");
-  };
-
-  const clearErrors = () => {
-    setEmailError("");
-    setPasswordError("");
-  };
-
-  const handleLogin = () => {
-    clearErrors();
-
-    auth.signInWithEmailAndPassword(email, password).catch((err) => {
-      switch (err.code) {
-        case "auth/invalid-email":
-        case "auth/user-disabled":
-        case "auth/user-not-found":
-          setEmailError(err.message);
-          break;
-        case "auth/wrong-password":
-          setPasswordError(err.message);
-          break;
-      }
-    });
-  };
-
-  const handleSignup = () => {
-    clearErrors();
-
-    auth.craeteUserWithEmailAndPassword(email, password).catch((err) => {
-      switch (err.code) {
-        case "auth/email-already-in-use":
-        case "auth/invalid-email":
-          setEmailError(err.message);
-          break;
-        case "auth/weak-password":
-          setPasswordError(err.message);
-          break;
-      }
-    });
-  };
-
-  const handleLogout = () => {
-    auth.signOut();
-  };
-
-  const authListener = () => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        clearInputs();
-        setUser(user);
-      } else {
-        setUser("");
-      }
-    });
-  };
-
-  useEffect(() => {
-    authListener();
-  }, []);
 
   const animation = useSpring({
     config: {
@@ -108,11 +51,34 @@ const SignupScreen = ({ showSignup, setshowSignup }) => {
                   className="signup__Input"
                   placeholder="Email"
                   type="email"
+                  required
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
                 />
+
                 <input
                   className="signup__Input"
                   placeholder="Password"
                   type="password"
+                  required
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                />
+                <input
+                  className="signup__Input"
+                  placeholder="Username"
+                  type="text"
+                  required
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
+                />
+                <input
+                  className="signup__Input"
+                  placeholder="Display name"
+                  type="text"
+                  required
+                  value={displayName}
+                  onChange={(event) => setDisplayName(event.target.value)}
                 />
               </div>
 

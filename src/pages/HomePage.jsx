@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import Widgets from "../components/Widgets";
 
-const HomePage = () => {
+const HomePage = (props) => {
   return (
     //BEM
     <div className="app">

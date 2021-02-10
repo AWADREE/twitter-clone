@@ -6,11 +6,28 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import { Button } from "@material-ui/core";
 import SignupScreen from "../components/SignupScreen";
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const [showSignup, setshowSignup] = useState(false);
   const openSignupScreen = () => {
     setshowSignup((prev) => !prev);
   };
+
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleSignup,
+    handleLogin,
+    hasAccount,
+    setHasAccount,
+    emailError,
+    passwordError,
+    username,
+    setUsername,
+    displayName,
+    setDisplayName,
+  } = props;
 
   return (
     <div className="loginPage">
@@ -18,7 +35,7 @@ const LoginPage = () => {
       <TwitterIcon className="loginPage__LargeTwitterIcon" />
 
       <div className="loginPage__Interactive">
-        <LoginBox />
+        <LoginBox email={email} setEmail={setEmail} emailError={emailError} />
 
         <TwitterIcon className="loginPage__SmallTwitterIcon" />
 
@@ -31,7 +48,20 @@ const LoginPage = () => {
           >
             Sign up
           </Button>
-          <SignupScreen showSignup={showSignup} setshowSignup={setshowSignup} />
+          <SignupScreen
+            showSignup={showSignup}
+            setshowSignup={setshowSignup}
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            hasAccount={hasAccount}
+            setHasAccount={setHasAccount}
+            username={username}
+            setUsername={setUsername}
+            displayName={displayName}
+            setDisplayName={setDisplayName}
+          />
         </div>
       </div>
     </div>
