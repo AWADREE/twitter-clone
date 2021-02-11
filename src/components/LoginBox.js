@@ -1,6 +1,7 @@
 import { Button } from "@material-ui/core";
 import React from "react";
 import "./LoginBox.css";
+import { Link } from "react-router-dom";
 
 const LoginBox = (props) => {
   return (
@@ -15,7 +16,7 @@ const LoginBox = (props) => {
             value={props.email}
             onChange={(event) => props.setEmail(event.target.value)}
           />
-          <p>{props.emailError}</p>
+          <p className="loginBox__ErrorMessage">{props.emailError}</p>
         </div>
         <div className="loginBox__InputContainer">
           <input
@@ -23,10 +24,18 @@ const LoginBox = (props) => {
             type="password"
             required
             value={props.password}
+            onChange={(event) => props.setPassword(event.target.value)}
           />
+          <p className="loginBox__ErrorMessage">{props.passwordError}</p>
         </div>
 
-        <Button className="loginBox__LoginButton">Log in</Button>
+        <Button
+          className="loginBox__LoginButton"
+          onClick={props.handleLogin}
+          // to={props.user ? "/home" : null}
+        >
+          Log in
+        </Button>
       </form>
     </div>
   );

@@ -24,6 +24,12 @@
   font-size: 20px;
   font-weight: 500;
 }
+
+.loginBox__ErrorMessage {
+  font-weight: 300;
+  color: red;
+}
+
 .loginBox__LoginButton {
   border: 1px solid var(--twitter-color) !important;
   color: var(--twitter-color) !important;

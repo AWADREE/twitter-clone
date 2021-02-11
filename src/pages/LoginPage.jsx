@@ -27,6 +27,7 @@ const LoginPage = (props) => {
     setUsername,
     displayName,
     setDisplayName,
+    user,
   } = props;
 
   return (
@@ -35,7 +36,16 @@ const LoginPage = (props) => {
       <TwitterIcon className="loginPage__LargeTwitterIcon" />
 
       <div className="loginPage__Interactive">
-        <LoginBox email={email} setEmail={setEmail} emailError={emailError} />
+        <LoginBox
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          emailError={emailError}
+          passwordError={passwordError}
+          handleLogin={handleLogin}
+          user={user}
+        />
 
         <TwitterIcon className="loginPage__SmallTwitterIcon" />
 
@@ -55,8 +65,11 @@ const LoginPage = (props) => {
             setEmail={setEmail}
             password={password}
             setPassword={setPassword}
+            handleSignup={handleSignup}
             hasAccount={hasAccount}
             setHasAccount={setHasAccount}
+            emailError={emailError}
+            passwordError={passwordError}
             username={username}
             setUsername={setUsername}
             displayName={displayName}

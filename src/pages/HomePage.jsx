@@ -6,9 +6,8 @@ import Widgets from "../components/Widgets";
 
 const HomePage = (props) => {
   return (
-    //BEM
     <div className="app">
-      <Sidebar />
+      <Sidebar handleLogout={props.handleLogout} />
       <Feed />
       <Widgets />
     </div>

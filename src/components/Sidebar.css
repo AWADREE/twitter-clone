@@ -15,7 +15,7 @@
 }
 
 /* add !important to overwrite the material ui theme */
-.sidebar__tweet {
+.sidebar__Logout {
   background-color: var(--twitter-color) !important;
   border: none !important;
   color: white !important;
@@ -24,4 +24,7 @@
   border-radius: 30px !important;
   height: 50px !important;
   margin-top: 20px !important;
+}
+.sidebar__Logout:hover {
+  background-color: #dc243c !important;
 }

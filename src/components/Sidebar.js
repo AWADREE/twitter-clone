@@ -12,7 +12,7 @@ import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Button from "@material-ui/core/Button";
 
-function Sidebar() {
+function Sidebar(props) {
   return (
     <div className="sidebar">
       <TwitterIcon className="sidebar__twitterIcon" />
@@ -33,9 +33,13 @@ function Sidebar() {
 
       <SidebarOption Icon={MoreHorizIcon} text="More" />
 
-      {/* button -> Tweet */}
-      <Button variant="outlined" className="sidebar__tweet" fullWidth>
-        Tweet
+      <Button
+        variant="outlined"
+        className="sidebar__Logout"
+        fullWidth
+        onClick={props.handleLogout}
+      >
+        Log out
       </Button>
     </div>
   );

@@ -54,7 +54,7 @@ const App = () => {
   const handleSignup = () => {
     clearErrors();
 
-    auth.craeteUserWithEmailAndPassword(email, password).catch((err) => {
+    auth.createUserWithEmailAndPassword(email, password).catch((err) => {
       switch (err.code) {
         case "auth/email-already-in-use":
         case "auth/invalid-email":
@@ -80,6 +80,14 @@ const App = () => {
         setUser("");
       }
     });
+  };
+
+  const handleHomeLoad = () => {
+    if (user) {
+      //go to home page
+    } else {
+      //do nothing
+    }
   };
 
   useEffect(() => {
@@ -108,11 +116,19 @@ const App = () => {
               setUsername={setUsername}
               displayName={displayName}
               setDisplayName={setDisplayName}
+              user={user}
             />
           )}
         />
-        <Route exact path="/home" render={(props) => <HomePage />} />
+
+        <Route
+          exact
+          path="/home"
+          render={(props) => <HomePage handleLogout={handleLogout} />}
+        />
+
         <Route exact path="/404" component={ErrorPage} />
+
         <Redirect to="/404" />
       </Switch>
     </Router>

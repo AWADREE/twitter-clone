@@ -51,6 +51,11 @@
   padding-left: 10px;
 }
 
+.signup__ErrorMessage {
+  font-weight: 200;
+  color: red;
+}
+
 .signup__Button {
   background-color: var(--twitter-color) !important;
   border: none !important;

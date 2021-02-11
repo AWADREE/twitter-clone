@@ -11,8 +11,11 @@ const SignupScreen = ({
   setEmail,
   password,
   setPassword,
+  handleSignup,
   hasAccount,
   setHasAccount,
+  emailError,
+  passwordError,
   username,
   setUsername,
   displayName,
@@ -43,10 +46,11 @@ const SignupScreen = ({
           onClick={closeScreen}
         >
           <animated.div style={animation} className="signup__Background">
-            <form>
+            <div>
               <TwitterIcon className="signup__Icon" />
               <h3 className="signup__h3">Create your account</h3>
               <div className="signup__InputContainer">
+                <p className="signup__ErrorMessage">{emailError}</p>
                 <input
                   className="signup__Input"
                   placeholder="Email"
@@ -56,6 +60,7 @@ const SignupScreen = ({
                   onChange={(event) => setEmail(event.target.value)}
                 />
 
+                <p className="signup__ErrorMessage">{passwordError}</p>
                 <input
                   className="signup__Input"
                   placeholder="Password"
@@ -64,6 +69,7 @@ const SignupScreen = ({
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                 />
+
                 <input
                   className="signup__Input"
                   placeholder="Username"
@@ -85,11 +91,14 @@ const SignupScreen = ({
               <Button
                 className="signup__Button"
                 type="submit"
-                onClick={() => setshowSignup((prev) => !prev)}
+                onClick={() => {
+                  handleSignup();
+                  // setshowSignup((prev) => !prev);
+                }}
               >
                 Sign up
               </Button>
-            </form>
+            </div>
           </animated.div>
         </div>
       ) : null}
