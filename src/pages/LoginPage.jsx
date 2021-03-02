@@ -12,23 +12,23 @@ const LoginPage = (props) => {
     setshowSignup((prev) => !prev);
   };
 
-  const {
-    email,
-    setEmail,
-    password,
-    setPassword,
-    handleSignup,
-    handleLogin,
-    hasAccount,
-    setHasAccount,
-    emailError,
-    passwordError,
-    username,
-    setUsername,
-    displayName,
-    setDisplayName,
-    user,
-  } = props;
+  // const {
+  //   email,
+  //   setEmail,
+  //   password,
+  //   setPassword,
+  //   handleSignup,
+  //   handleLogin,
+  //   hasAccount,
+  //   setHasAccount,
+  //   emailError,
+  //   passwordError,
+  //   username,
+  //   setUsername,
+  //   displayName,
+  //   setDisplayName,
+  //   user,
+  // } = props;
 
   return (
     <div className="loginPage">
@@ -37,14 +37,14 @@ const LoginPage = (props) => {
 
       <div className="loginPage__Interactive">
         <LoginBox
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          emailError={emailError}
-          passwordError={passwordError}
-          handleLogin={handleLogin}
-          user={user}
+        // email={email}
+        // setEmail={setEmail}
+        // password={password}
+        // setPassword={setPassword}
+        // emailError={emailError}
+        // passwordError={passwordError}
+        // handleLogin={handleLogin}
+        // user={user}
         />
 
         <TwitterIcon className="loginPage__SmallTwitterIcon" />
@@ -61,19 +61,19 @@ const LoginPage = (props) => {
           <SignupScreen
             showSignup={showSignup}
             setshowSignup={setshowSignup}
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-            handleSignup={handleSignup}
-            hasAccount={hasAccount}
-            setHasAccount={setHasAccount}
-            emailError={emailError}
-            passwordError={passwordError}
-            username={username}
-            setUsername={setUsername}
-            displayName={displayName}
-            setDisplayName={setDisplayName}
+            // email={email}
+            // setEmail={setEmail}
+            // password={password}
+            // setPassword={setPassword}
+            // handleSignup={handleSignup}
+            // hasAccount={hasAccount}
+            // setHasAccount={setHasAccount}
+            // emailError={emailError}
+            // passwordError={passwordError}
+            // username={username}
+            // setUsername={setUsername}
+            // displayName={displayName}
+            // setDisplayName={setDisplayName}
           />
         </div>
       </div>

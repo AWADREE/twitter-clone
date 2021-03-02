@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { Card, Alert } from "react-bootstrap";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 import "./Sidebar.css";
 import SidebarOption from "./SidebarOption";
 import TwitterIcon from "@material-ui/icons/Twitter";
@@ -41,6 +44,7 @@ function Sidebar(props) {
       >
         Log out
       </Button>
+      {props.logoutError && <Alert variant="danger">{props.logoutError}</Alert>}
     </div>
   );
 }
