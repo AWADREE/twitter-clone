@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react";
-import { Form, Button, Card, Alert } from "react-bootstrap";
+import { Form, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import { Button } from "@material-ui/core";
+import "./LoginBox.css";
 
 export default function Login() {
   const emailRef = useRef();
@@ -20,34 +22,37 @@ export default function Login() {
       await login(emailRef.current.value, passwordRef.current.value);
       history.push("/home");
     } catch {
-      setError("Failed to Log in");
+      setError(
+        "The username and password you entered did not match our records. Please double-check and try again."
+      );
     }
     setLoading(false);
   }
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
-              Log In
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 tect-center mt-2">
-        Need an account? <Link to="/signup">Sign up</Link>
+      <div className="loginBox">
+        <form className="loginBox__Form" onSubmit={handleSubmit}>
+          <div className="loginBox__InputContainer" id="email">
+            <input placeholder="Email" type="email" ref={emailRef} required />
+          </div>
+          <div className="loginBox__InputContainer" id="password">
+            <input
+              placeholder="Password"
+              type="password"
+              ref={passwordRef}
+              required
+            />
+          </div>
+          <Button
+            disabled={loading}
+            className="loginBox__LoginButton"
+            type="submit"
+          >
+            Log in
+          </Button>
+        </form>
+        {error && <p className="loginBox__ErrorMessage">{error}</p>}
       </div>
     </>
   );
@@ -60,7 +65,9 @@ export default function Login() {
 // const LoginBox = (props) => {
 //    return (
 //   //   <div className="loginBox">
+
 //   //     <form className="loginBox__Form">
+
 //   //       <div className="loginBox__InputContainer">
 //   //         <input
 //   //             placeholder="Email"

@@ -12,40 +12,13 @@ const LoginPage = (props) => {
     setshowSignup((prev) => !prev);
   };
 
-  // const {
-  //   email,
-  //   setEmail,
-  //   password,
-  //   setPassword,
-  //   handleSignup,
-  //   handleLogin,
-  //   hasAccount,
-  //   setHasAccount,
-  //   emailError,
-  //   passwordError,
-  //   username,
-  //   setUsername,
-  //   displayName,
-  //   setDisplayName,
-  //   user,
-  // } = props;
-
   return (
     <div className="loginPage">
       <img src={loginImage} alt="" />
       <TwitterIcon className="loginPage__LargeTwitterIcon" />
 
       <div className="loginPage__Interactive">
-        <LoginBox
-        // email={email}
-        // setEmail={setEmail}
-        // password={password}
-        // setPassword={setPassword}
-        // emailError={emailError}
-        // passwordError={passwordError}
-        // handleLogin={handleLogin}
-        // user={user}
-        />
+        <LoginBox />
 
         <TwitterIcon className="loginPage__SmallTwitterIcon" />
 
@@ -58,23 +31,7 @@ const LoginPage = (props) => {
           >
             Sign up
           </Button>
-          <SignupScreen
-            showSignup={showSignup}
-            setshowSignup={setshowSignup}
-            // email={email}
-            // setEmail={setEmail}
-            // password={password}
-            // setPassword={setPassword}
-            // handleSignup={handleSignup}
-            // hasAccount={hasAccount}
-            // setHasAccount={setHasAccount}
-            // emailError={emailError}
-            // passwordError={passwordError}
-            // username={username}
-            // setUsername={setUsername}
-            // displayName={displayName}
-            // setDisplayName={setDisplayName}
-          />
+          <SignupScreen showSignup={showSignup} setshowSignup={setshowSignup} />
         </div>
       </div>
     </div>

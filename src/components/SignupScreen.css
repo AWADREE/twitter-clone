@@ -10,7 +10,10 @@
 
 .signup__Background {
   width: 50%;
-  height: 70%;
+  height: fit-content;
+  padding-bottom: 1.5%;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
   position: absolute;
   top: 20%;
   left: 25%;
@@ -20,11 +23,23 @@
   z-index: 10;
 }
 
+.signup__header {
+  display: flex;
+  justify-content: space-between;
+}
 .signup__Icon {
   margin: 10px;
   font-size: 35px;
   color: var(--twitter-color);
-  margin-left: 49%;
+  margin-left: 22.5vw;
+}
+
+.signup__CloseButton {
+  margin: 10px !important;
+}
+.signup__CloseButton:hover {
+  background-color: #dc243c !important;
+  color: white !important;
 }
 
 .signup__h3 {
@@ -37,8 +52,8 @@
 .signup__InputContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
-  margin-right: 20px;
+  /* margin-left: 20px;
+  margin-right: 20px; */
 }
 
 .signup__Input {
@@ -63,8 +78,8 @@
   font-weight: 900 !important;
   text-transform: inherit !important;
   border-radius: 30px !important;
-  width: 400px;
+  width: 50%;
   height: 50px !important;
   margin-top: 30px !important;
-  margin-left: 180px !important;
+  margin-left: 12vw !important;
 }
