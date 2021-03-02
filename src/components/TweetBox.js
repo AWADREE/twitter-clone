@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./TweetBox.css";
 import { Avatar, Button } from "@material-ui/core";
 import { dbp } from "../firebase";
+import firebase from "firebase";
 
 function TweetBox(props) {
   const [tweetMessage, setTweetMessage] = useState("");
@@ -17,8 +18,8 @@ function TweetBox(props) {
       verified: true,
       text: tweetMessage,
       image: tweetImage,
-      avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbSIbfes4K5CLLIAnBoKhAUGptxjtHQ9IKWQ&usqp=CAU",
+      avatar: "",
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
     //then clearing the input fields to blank
     setTweetImage("");
@@ -29,7 +30,7 @@ function TweetBox(props) {
     <div className="tweetBox">
       <form>
         <div className="tweetBox__input">
-          <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbSIbfes4K5CLLIAnBoKhAUGptxjtHQ9IKWQ&usqp=CAU" />
+          <Avatar src="" />
 
           <input
             onChange={(event) => setTweetMessage(event.target.value)}
