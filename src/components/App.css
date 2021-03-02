@@ -1,0 +1,5 @@
+/* creating a global variable, it will be available throughout the entire body */
+body {
+  --twitter-color: #50b7f5;
+  --twitter-background: #e6ecf0;
+}

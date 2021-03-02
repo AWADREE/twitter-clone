@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./TweetBox.css";
 import { Avatar, Button } from "@material-ui/core";
-import logo from "./Avatar.png";
-import db from "./firebase";
+import { dbp } from "../firebase";
 
-function TweetBox() {
+function TweetBox(props) {
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
 
@@ -12,9 +11,9 @@ function TweetBox() {
     //preventinf the form from refreshing
     event.preventDefault();
     // accessing the db and adding a new doc to it with the values from th following object
-    db.collection("posts").add({
-      displayName: "Angry van Cumbersome",
-      username: "angerissues12",
+    dbp.add({
+      displayName: props.currentUser.email,
+      username: props.currentUser.email,
       verified: true,
       text: tweetMessage,
       image: tweetImage,

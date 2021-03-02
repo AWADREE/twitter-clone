@@ -1,9 +1,18 @@
 .sidebarOption {
+  padding-top: 6%;
+  padding-bottom: 3.8%;
+  padding-left: 5%;
+  /* padding: 8.8%; */
+  color: black;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   cursor: pointer;
   border-radius: 30px;
   transition: background-color 200ms ease-out;
+}
+
+.sidebarOption__Link {
+  text-decoration: none !important;
 }
 
 /* using a varibale */
@@ -15,9 +24,9 @@
 }
 
 /* iside .sidebarOption if u find a child which is material ui icon then */
-.sidebarOption > .MuiSvgIcon-root {
+/* .sidebarOption > .MuiSvgIcon-root {
   padding: 14px;
-}
+} */
 
 .sidebarOption > h2 {
   font-weight: 680;

@@ -1,0 +1,44 @@
+.loginBox__Link {
+  text-decoration: none;
+}
+.loginBox__Form {
+  display: flex;
+  margin-top: 18px;
+}
+.loginBox__InputContainer {
+  border: 1px solid var(--twitter-background);
+  border-radius: 7px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.loginBox__InputContainer > h5 {
+  font-weight: 400;
+}
+
+.loginBox__InputContainer > input {
+  outline: none;
+  border: none;
+  height: 28px;
+  width: 200px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.loginBox__ErrorMessage {
+  font-weight: 300;
+  color: red;
+}
+
+.loginBox__LoginButton {
+  border: 1px solid var(--twitter-color) !important;
+  color: var(--twitter-color) !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  width: 110px;
+  height: 50px !important;
+  margin-top: 5px !important;
+  /* margin-top: 20px !important;
+  margin-left: auto !important; */
+}
