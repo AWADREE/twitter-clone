@@ -1,23 +1,19 @@
 //rfce
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Feed.css";
 import Post from "./Post";
 import TweetBox from "./TweetBox";
 import { dbp } from "../firebase";
+import { useCollectionData } from "react-firebase-hooks/firestore";
+
 import FlipMove from "react-flip-move";
 
 function Feed(props) {
-  const [posts, setPosts] = useState([]);
+  const query = dbp.orderBy("createdAt", "desc").limit(1000);
 
-  useEffect(() => {
-    dbp.onSnapshot(
-      (snapshot) => setPosts(snapshot.docs.map((doc) => doc.data()))
-      //this will give an array of all the data from each doc which are the props from each post inside the database
-      // db.collection("posts").onSnapshot(
-      //   (snapshot) => setPosts(snapshot.docs.map((doc) => doc.data()))
-    );
-  }, []);
-  // empty brakets mean load when the Feed component loads, and dont run it again after
+  const [posts] = useCollectionData(query, {
+    idField: "id",
+  });
 
   return (
     <div className="feed">
@@ -27,17 +23,18 @@ function Feed(props) {
       <TweetBox currentUser={props.currentUser} />
 
       <FlipMove>
-        {posts.map((post) => (
-          <Post
-            key={post.text}
-            displayName={post.displayName}
-            username={post.username}
-            verified={post.verified}
-            text={post.text}
-            avatar={post.avatar}
-            image={post.image}
-          />
-        ))}
+        {posts &&
+          posts.map((post) => (
+            <Post
+              key={post.id}
+              displayName={post.displayName}
+              username={post.username}
+              verified={post.verified}
+              text={post.text}
+              avatar={post.avatar}
+              image={post.image}
+            />
+          ))}
       </FlipMove>
     </div>
   );
