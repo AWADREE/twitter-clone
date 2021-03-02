@@ -13,7 +13,7 @@ function TweetBox(props) {
     // accessing the db and adding a new doc to it with the values from th following object
     dbp.add({
       displayName: props.currentUser.email,
-      username: "",
+      username: props.currentUser.email,
       verified: true,
       text: tweetMessage,
       image: tweetImage,
