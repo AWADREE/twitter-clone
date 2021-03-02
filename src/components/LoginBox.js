@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
-import { Form, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import "./LoginBox.css";
 

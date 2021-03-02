@@ -1,19 +1,19 @@
 import React, { useRef, useState } from "react";
-import { Form, Card, Alert } from "react-bootstrap";
-import { useAuth } from "../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
-import "./SignupScreen.css";
+import { useHistory } from "react-router-dom";
+import { useSpring, animated } from "react-spring";
+
 import TwitterIcon from "@material-ui/icons/Twitter";
 import CloseIcon from "@material-ui/icons/Close";
 import { Button } from "@material-ui/core";
-import { useSpring, animated } from "react-spring";
+
+import { useAuth } from "../contexts/AuthContext";
 import "./SignupScreen.css";
 
 export default function Signup({ showSignup, setshowSignup }) {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const screenRef = useRef();
+  // const screenRef = useRef();
   const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);

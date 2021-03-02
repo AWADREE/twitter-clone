@@ -3,8 +3,7 @@ import "./HomePage.css";
 import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import Widgets from "../components/Widgets";
-import { Card, Button, Alert } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 const HomePage = (props) => {
