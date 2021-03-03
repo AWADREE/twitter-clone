@@ -14,27 +14,29 @@ import ListAltIcon from "@material-ui/icons/ListAlt";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Button from "@material-ui/core/Button";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 function Sidebar(props) {
   return (
     <div className="sidebar">
-      <TwitterIcon className="sidebar__twitterIcon" />
+      <div>
+        <TwitterIcon className="sidebar__twitterIcon" />
+        <SidebarOption active Icon={HomeIcon} link="/home" text="Home" />
 
-      <SidebarOption active Icon={HomeIcon} link="/home" text="Home" />
+        <SidebarOption Icon={SearchIcon} text="Explore" />
 
-      <SidebarOption Icon={SearchIcon} text="Explore" />
+        <SidebarOption Icon={NotificationsNoneIcon} text="Notifications" />
 
-      <SidebarOption Icon={NotificationsNoneIcon} text="Notifications" />
+        <SidebarOption Icon={MailOutlineIcon} text="Messages" />
 
-      <SidebarOption Icon={MailOutlineIcon} text="Messages" />
+        <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />
 
-      <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />
+        <SidebarOption Icon={ListAltIcon} text="Lists" />
 
-      <SidebarOption Icon={ListAltIcon} text="Lists" />
+        <SidebarOption Icon={PermIdentityIcon} text="Profile" />
 
-      <SidebarOption Icon={PermIdentityIcon} text="Profile" />
-
-      <SidebarOption Icon={MoreHorizIcon} text="More" />
+        <SidebarOption Icon={MoreHorizIcon} text="More" />
+      </div>
 
       <Button
         variant="outlined"
@@ -42,7 +44,8 @@ function Sidebar(props) {
         fullWidth
         onClick={props.handleLogout}
       >
-        Log out
+        <ExitToAppIcon />
+        <span>Log out</span>
       </Button>
       {/* {props.logoutError && <Alert variant="danger">{props.logoutError}</Alert>} */}
     </div>

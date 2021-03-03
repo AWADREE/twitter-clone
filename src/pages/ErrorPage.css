@@ -1,0 +1,28 @@
+.errorPage {
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  /* margin-top: 20%; */
+}
+.errorPage__boxBorder {
+  margin-top: 35vh;
+  padding: 5%;
+  background-color: var(--twitter-color);
+  display: flex;
+  border-radius: 5px;
+}
+
+.errorPage__boxFiller {
+  padding: 5%;
+  background-color: white;
+  display: flex;
+  border-radius: 5px;
+}
+.errorPage__box {
+  padding: 5%;
+  background-color: var(--twitter-color);
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
