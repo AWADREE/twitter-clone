@@ -1,18 +1,25 @@
-.sidebarOption {
-  padding-top: 6%;
-  padding-bottom: 3.8%;
-  padding-left: 5%;
-  /* padding: 8.8%; */
-  color: black;
-  display: flex;
-  /* align-items: center; */
-  cursor: pointer;
-  border-radius: 30px;
-  transition: background-color 200ms ease-out;
-}
-
 .sidebarOption__Link {
   text-decoration: none !important;
+}
+.sidebarOption {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  color: black;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: color 200ms ease-out;
+  transition: background-color 200ms ease-out;
+}
+@media all and (max-width: 1100px) {
+  h2 {
+    display: none;
+  }
+  .sidebarOption {
+    padding-left: 20px;
+  }
 }
 
 /* using a varibale */

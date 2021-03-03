@@ -18,7 +18,7 @@ function Feed(props) {
   return (
     <div className="feed">
       <div className="feed__header">
-        <h2>Home</h2>
+        <h3>Home</h3>
       </div>
       <TweetBox currentUser={props.currentUser} />
 

@@ -11,9 +11,15 @@
 
 .feed {
   flex: 0.47;
+
   border-right: 1px solid var(--twitter-background);
   min-width: 40%;
   overflow-y: scroll;
+}
+@media all and (max-width: 1280px) {
+  .feed {
+    flex: 1.5;
+  }
 }
 .feed__header {
   position: sticky;
@@ -26,7 +32,7 @@
   padding: 15px 20px;
 }
 
-.feed__header > h2 {
+.feed__header > h3 {
   font-size: 20px;
   font-weight: 800;
 }

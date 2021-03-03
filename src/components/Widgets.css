@@ -34,3 +34,9 @@
   font-size: 18px;
   font-weight: 800;
 }
+
+@media all and (max-width: 850px) {
+  .widgets {
+    display: none;
+  }
+}
