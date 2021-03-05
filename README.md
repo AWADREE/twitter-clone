@@ -1,4 +1,4 @@
-# This project is deployed on the following linbk:
+# This project is deployed on the following link:
 
 https://twitter-clone-1ae9a.web.app/
 
